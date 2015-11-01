@@ -26,6 +26,7 @@ public class Principal extends JFrame{
         this.setTitle("Inces");
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.pack();
     }
     
     public static void main(String[] args) {

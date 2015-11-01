@@ -7,53 +7,54 @@ package Modelo;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
-import java.awt.event.ActionListener;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 /**
  *
  * @author Yuli / Fr@n
  */
-public class CampoTexto extends Container{
+public class AreaTexto extends Container{
     
-    JTextField campo;
+    JTextArea campo;
     JLabel etiqueta;
-    JPanel panel;
+    JScrollPane scroll;
     
-    public CampoTexto(){
-        this(20, "");
+    public AreaTexto(){
+        this(1, 20, "");
     }
     
-    public CampoTexto(String nombre){
-        this(20, nombre);
+    public AreaTexto(String nombre){
+        this(1, 20, nombre);
     }
     
-    public CampoTexto(int ancho){
-        this(ancho, "");
+    public AreaTexto(int alto, int ancho){
+        this(alto, ancho, "");
     }
     
-    public CampoTexto(int ancho, String nombre){
+    public AreaTexto(int alto, int ancho, String nombre){
         inicializar();
         
-        campo = new JTextField(ancho);
+        campo = new JTextArea(alto, ancho);
         etiqueta = new JLabel(nombre);
-        panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.LEADING, 20,5));
+        scroll = new JScrollPane();
+        scroll.setViewportView(campo);
         
+        campo.setLineWrap(true);
+        campo.setWrapStyleWord(true);
         
-        panel.add(etiqueta);
-        panel.add(campo);
-        
-        add(panel);
+        add(etiqueta);
+        add(campo);
     }
     
     private void inicializar(){
-        this.setLayout(new FlowLayout(FlowLayout.LEFT));
+        this.setLayout(new FlowLayout());
+        
     }
     
     public void modificarTexto(String texto){
@@ -66,10 +67,6 @@ public class CampoTexto extends Container{
     
     public void agregarOyente(KeyListener oyente){
         campo.addKeyListener(oyente);
-    }
-    
-    public void agregarOyente(ActionListener oyente){
-        campo.addActionListener(oyente);
     }
     
     public void agregarOyente(MouseListener oyente){

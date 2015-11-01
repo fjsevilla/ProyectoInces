@@ -14,7 +14,8 @@ import javax.swing.JPanel;
  */
 public class PanelPersona extends JPanel{
     
-    CampoTexto nombre, apellido, cedula, direccion, telefono, celular;
+    CampoTexto nombre, apellido, cedula, telefono, celular;
+    AreaTexto direccion;
     
     public PanelPersona(){
         inicializar();
@@ -26,7 +27,7 @@ public class PanelPersona extends JPanel{
         apellido = new CampoTexto(50,  "Apellidos: ");
         telefono = new CampoTexto(15, "Telefono Habitacion: ");
         celular = new CampoTexto(15, "Celular: ");
-        direccion = new CampoTexto(200, "Direccion");
+        direccion = new AreaTexto(4, 50, "Direccion");
         
         this.setLayout(new GridLayout(8,1));
         this.add(cedula);
