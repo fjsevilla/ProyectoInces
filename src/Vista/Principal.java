@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Modelo.PanelPersona;
+import Modelo.*;
 import javax.swing.JFrame;
 
 /**
@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 public class Principal extends JFrame{
     
     public Principal(){
-        PanelPersona per = new PanelPersona();
+        Cursos per = new Cursos();
         this.add(per);
         
         inicializar();

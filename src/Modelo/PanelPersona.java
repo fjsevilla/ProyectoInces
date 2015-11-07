@@ -23,11 +23,11 @@ public class PanelPersona extends JPanel{
     
     private void inicializar(){
         cedula = new CampoTexto(10, "Cedula: ");
-        nombre = new CampoTexto(50, "Nombres: ");
-        apellido = new CampoTexto(50,  "Apellidos: ");
+        nombre = new CampoTexto(30, "Nombres: ");
+        apellido = new CampoTexto(30,  "Apellidos: ");
         telefono = new CampoTexto(15, "Telefono Habitacion: ");
         celular = new CampoTexto(15, "Celular: ");
-        direccion = new AreaTexto(4, 50, "Direccion");
+        direccion = new AreaTexto(4, 50, "Direccion: ");
         
         this.setLayout(new GridLayout(8,1));
         this.add(cedula);
