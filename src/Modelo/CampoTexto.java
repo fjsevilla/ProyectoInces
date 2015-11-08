@@ -27,7 +27,6 @@ public class CampoTexto extends Container{
     
     JTextField campo;
     JLabel etiqueta;
-    JPanel panel;
     
     public CampoTexto(){
         this(20, "");
@@ -46,31 +45,30 @@ public class CampoTexto extends Container{
         
         campo = new JTextField(ancho);
         etiqueta = new JLabel(nombre);
-        etiqueta.setPreferredSize(new java.awt.Dimension(130, 40));
-        etiqueta.setMinimumSize(new java.awt.Dimension(130, 40));
-        panel = new JPanel();
+        etiqueta.setPreferredSize(new java.awt.Dimension(130, 10));
+        etiqueta.setMinimumSize(new java.awt.Dimension(130, 10));
         setLayout(new GridBagLayout());
         
         GridBagConstraints constraints = new GridBagConstraints();
-        constraints.gridx = 1;
+        constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.gridwidth = 5;
+        constraints.gridwidth = 1;
         constraints.gridheight = 1;
         constraints.weightx = 0.0;
-        constraints.weighty = 1.0;
+        constraints.weighty = 0.0;
         //constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.anchor = GridBagConstraints.WEST;
-        constraints.insets = new java.awt.Insets(2, 20, 2, 1);
+        constraints.insets = new java.awt.Insets(0, 20, 0, 1);
         
         
         add(etiqueta, constraints);
         
-        constraints.gridx = 6;
+        constraints.gridx = 1;
         constraints.gridy = 0;
-        constraints.gridwidth = 50;
+        constraints.gridwidth = 1;
         constraints.gridheight = 1;
         constraints.weightx = 1.0;
-        constraints.insets = new java.awt.Insets(2, 2, 2, 20);
+        constraints.insets = new java.awt.Insets(0, 2, 0, 20);
         //constraints.fill = GridBagConstraints.HORIZONTAL;
         
         add(campo, constraints);
@@ -81,6 +79,9 @@ public class CampoTexto extends Container{
     private void inicializar(){
         //this.setLayout(new FlowLayout(FlowLayout.LEFT));
         //this.setLayout(new FlowLayout());
+        setMaximumSize(new java.awt.Dimension(50, 5));
+        setPreferredSize(new java.awt.Dimension(50,5));
+        setMinimumSize(new java.awt.Dimension(50, 5));
     }
     
     public void modificarTexto(String texto){

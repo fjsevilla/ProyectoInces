@@ -13,12 +13,12 @@ import javax.swing.JTabbedPane;
  */
 public class PanelPestanas extends JTabbedPane{
     
-    PanelPersona persona;
+    PanelDatos persona;
     Cursos cursos;
     Inscripcion inscripcion;
     
     public PanelPestanas(){
-        persona = new PanelPersona();
+        persona = new PanelDatos();
         cursos = new Cursos();
         inscripcion = new Inscripcion();
         

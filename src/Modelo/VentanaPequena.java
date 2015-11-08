@@ -77,16 +77,16 @@ public class VentanaPequena extends JFrame implements Acciones{
         this.dispose();
     }
 
-    @Override
+    
     public void modificar() {}
 
-    @Override
+    
     public void incluir() {}
 
-    @Override
+    
     public void cerrar() {}
 
-    @Override
+    
     public void eliminar() {}
 
 }

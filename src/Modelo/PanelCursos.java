@@ -14,7 +14,7 @@ import java.awt.GridLayout;
  */
 public class PanelCursos extends Container{
     
-    PanelJComboBox areas, turnos;
+    PanelJComboBox areas, horaInicio, horaFin;
     CampoTexto nombre, duracion;
     
     public PanelCursos(){
@@ -22,19 +22,32 @@ public class PanelCursos extends Container{
         inicializar();
         
         areas = new PanelJComboBox("Area de Saber: ");
-        turnos = new PanelJComboBox("Turno: ");
+        horaInicio = new PanelJComboBox("Hora: ");
+        horaFin = new PanelJComboBox(" a : ");
         duracion = new CampoTexto(5, "Duracion: ");
         nombre = new CampoTexto(15, "Nombre");
+        
+        llenarCombo(horaInicio);
+        llenarCombo(horaFin);
         
         add(nombre);
         add(duracion);
         add(areas);
-        add(turnos);
+        add(horaInicio);
+        add(horaFin);
         
     }
     
     private void inicializar(){
-        setLayout(new GridLayout(4,1));
+        setLayout(new GridLayout(3,2));
+    }
+    
+    private void llenarCombo(PanelJComboBox panel){
+        int x = 730;
+        for (int i = 0; i < 20; i++){
+            x+= 30;
+            panel.agregarItem(x);
+        }
     }
     
 }

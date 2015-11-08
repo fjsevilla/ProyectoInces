@@ -29,6 +29,10 @@ public class PanelJComboBox extends JPanel {
         combo.addItem(item);
     }
     
+    public void agregarItem(Object item){        
+        combo.addItem(item);
+    }
+    
     public String obtenerContenido(){
         return (String) combo.getSelectedItem();
     }
