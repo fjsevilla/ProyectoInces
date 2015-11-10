@@ -3,6 +3,7 @@ package Vista;
 import Imagenes.PanelImagen;
 import Modelo.*;
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
@@ -14,6 +15,7 @@ import javax.swing.UIManager;
 public class MainInces extends JFrame{
     
     Menu menu;
+    private Dimension dim;
     
     public MainInces(){     
         inicializar();
@@ -23,20 +25,18 @@ public class MainInces extends JFrame{
         
         menu = new Menu();
         
-        this.setSize(800, 600);
         this.setJMenuBar(menu);
-        this.setTitle("Inces");
+        this.setTitle("Sistema Automatizado de Registro INCES");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        
+                
         PanelImagen panelimage = new PanelImagen();
         panelimage.CrearPanelImagen();
         setContentPane(panelimage);
-        //this.setUndecorated(true);
         
-        this.add(new PanelCursos());
-        
+        dim=super.getToolkit().getScreenSize();
+        super.setSize(dim);               
         this.setVisible(true);
+        this.setUndecorated(false);  
     }
     
     public static void main(String[] args) {

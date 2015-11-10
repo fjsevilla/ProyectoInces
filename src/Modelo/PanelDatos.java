@@ -5,8 +5,10 @@
  */
 package Modelo;
 
+
 import java.awt.GridLayout;
 import javax.swing.JPanel;
+
 
 /**
  *
@@ -38,14 +40,9 @@ public class PanelDatos extends JPanel{
         this.add(celular);
         this.add(direccion);
         
-        
-        
-       this.setMaximumSize(new java.awt.Dimension(50, 250));
-       
-       this.setMinimumSize(new java.awt.Dimension(50, 220));
-       
+               
+       this.setMaximumSize(new java.awt.Dimension(50, 250));       
+       this.setMinimumSize(new java.awt.Dimension(50, 220));       
        this.setPreferredSize(new java.awt.Dimension(50, 230));
     }
-    
-    
 }
